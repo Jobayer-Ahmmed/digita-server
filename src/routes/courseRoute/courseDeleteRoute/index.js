@@ -1,5 +1,5 @@
 import expres, { query } from "express"
-import CourseCollection from "../../../models/Course"
+import CourseCollection from "../../../models/Course.js"
 
 
 var router = expres.Router()

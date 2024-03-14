@@ -1,11 +1,27 @@
 import express from "express"
 import applyMiddleWare from "./middlewares/applyMiddleWare.js"
+import coursePost from "./routes/courseRoute/coursePostRoute/index.js"
+import courseGet from "./routes/courseRoute/courseGetRoute/index.js"
+import courseUpdate from "./routes/courseRoute/courseUpdateRoute/index.js"
+import courseDelete from "./routes/courseRoute/courseDeleteRoute/index.js"
+import eventPost from "./routes/eventRoute/eventPostRoute/index.js"
+import eventGet from "./routes/eventRoute/eventGetRoute/index.js"
+import eventUpdate from "./routes/eventRoute/eventUpdateRoute/index.js"
+import eventDelete from "./routes/eventRoute/eventDeleteRoute/index.js"
 
 
 const app =express()
 
 
 applyMiddleWare(app)
+app.use(coursePost)
+app.use(courseGet)
+app.use(courseUpdate)
+app.use(courseDelete)
+app.use(eventPost)
+app.use(eventGet)
+app.use(eventUpdate)
+app.use(eventDelete)
 
 
 app.get("/health", (req, res)=>{
