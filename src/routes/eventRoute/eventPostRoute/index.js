@@ -5,7 +5,7 @@ import EventCollection from "../../../models/Event.js"
 
 const router = express.Router()
 
-router.post("/event", async(req, res)=>{
+router.post("/admin/dashboard/event", async(req, res)=>{
     const data = req.body
     const sentData = new EventCollection(data)
     const result = await sentData.save()

@@ -4,12 +4,12 @@ import coursePost from "./routes/courseRoute/coursePostRoute/index.js"
 import courseGet from "./routes/courseRoute/courseGetRoute/index.js"
 import courseUpdate from "./routes/courseRoute/courseUpdateRoute/index.js"
 import courseDelete from "./routes/courseRoute/courseDeleteRoute/index.js"
+import courseGetById from "./routes/courseRoute/courseGetRouteById/index.js"
 import eventPost from "./routes/eventRoute/eventPostRoute/index.js"
 import eventGet from "./routes/eventRoute/eventGetRoute/index.js"
 import eventUpdate from "./routes/eventRoute/eventUpdateRoute/index.js"
 import eventDelete from "./routes/eventRoute/eventDeleteRoute/index.js"
-import courseGetById from "./routes/courseRoute/courseGetRouteById/index.js"
-
+import eventGetById from "./routes/eventRoute/eventGetRouteById/index.js"
 
 const app =express()
 
@@ -24,6 +24,7 @@ app.use(eventGet)
 app.use(eventUpdate)
 app.use(eventDelete)
 app.use(courseGetById)
+app.use(eventGetById)
 
 
 app.get("/health", (req, res)=>{
