@@ -4,7 +4,7 @@ import CourseCollection from "../../../models/Course.js"
 
 
 var router = expres.Router()
-router.put("/course/:id", async(req, res)=>{
+router.put("/admin/dashboard/course/:id", async(req, res)=>{
     const getId = req.params.id
     const data = req.body
     const query = {_id:getId}
