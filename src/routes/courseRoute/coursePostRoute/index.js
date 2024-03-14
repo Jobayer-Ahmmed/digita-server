@@ -1,5 +1,6 @@
 import express from "express"
-import CourseCollection from "../../../../models/Course.js"
+import CourseCollection from "../../../models/Course.js"
+
 
 const router = express.Router()
 
