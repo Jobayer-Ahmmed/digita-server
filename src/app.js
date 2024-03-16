@@ -18,7 +18,7 @@ import userPost from "./routes/userRoute/userPostRoute/index.js"
 import userGet from "./routes/userRoute/userGetRouteByRef/index.js"
 import userGetByEmail from "./routes/userRoute/userGetRouteByEmail/index.js"
 import eventRegistrationPost from "./routes/eventRegsitration/eventRegsitrationPostRoute/index.js"
-
+import eventRegistrationGetByEmail from "./routes/eventRegsitration/eventRegistraionGetRouteByEmail/index.js"
 const app =express()
 
 applyMiddleWare(app)
@@ -40,6 +40,7 @@ app.use(userPost)
 app.use(userGet)
 app.use(userGetByEmail)
 app.use(eventRegistrationPost)
+app.use(eventRegistrationGetByEmail)
 
 app.get("/health", (req, res)=>{
     res.send("Digita server is running")
