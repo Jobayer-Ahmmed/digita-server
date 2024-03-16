@@ -3,7 +3,7 @@ import EventRegistrationCollection from "../../../models/EventRegistraion.js"
 
 const router = express.Router()
 
-router.post("/admin/dashboard/event/registration", async(req, res)=>{
+router.post("/event/registration", async(req, res)=>{
     const data = req.body
     const sentData = new EventRegistrationCollection(data)
     const result = await sentData.save()
