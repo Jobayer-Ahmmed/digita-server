@@ -11,6 +11,8 @@ import eventUpdate from "./routes/eventRoute/eventUpdateRoute/index.js"
 import eventDelete from "./routes/eventRoute/eventDeleteRoute/index.js"
 import eventGetById from "./routes/eventRoute/eventGetRouteById/index.js"
 import enrollmentPost from "./routes/enrollmentRoute/enrollmentPostRoute/index.js"
+import enrollmentGetByEmail from "./routes/enrollmentRoute/enrollmentGetByEmail/index.js"
+import enrollmentGetByRef from "./routes/enrollmentRoute/enrollmentGetByRef/index.js"
 import enrollmentGet from "./routes/enrollmentRoute/enrollmentGetRoute/index.js"
 import userPost from "./routes/userRoute/userPostRoute/index.js"
 import userGet from "./routes/userRoute/userGetRouteByRef/index.js"
@@ -31,6 +33,8 @@ app.use(courseGetById)
 app.use(eventGetById)
 app.use(enrollmentPost)
 app.use(enrollmentGet)
+app.use(enrollmentGetByEmail)
+app.use(enrollmentGetByRef)
 app.use(userPost)
 app.use(userGet)
 app.use(userGetByEmail)

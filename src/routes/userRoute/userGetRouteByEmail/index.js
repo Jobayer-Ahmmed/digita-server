@@ -1,14 +1,23 @@
-import expres from "express"
-import UserCollection from "../../../models/User.js"
+import express from "express";
+import UserCollection from "../../../models/User.js";
 
-var router = expres.Router()
+var router = express.Router();
 
-router.get("/user/email/:email", async(req, res)=>{
-    const email = req.params.email
-    const query = {email}
-    const result2 = await UserCollection.find(query)
-    const result = result2[0].ref_id
-    res.send(result)
-})
+router.get("/user/email/:email", async (req, res) => {
+    try {
+        const email = req.params.email;
+        const query = { email };
+        const projection = { ref_id: 1, _id: 0 };
+        const result = await UserCollection.findOne(query, projection)
+        if (result) {
+            res.send(result.ref_id);
+        } else {
+            res.status(404).send("User not found");
+        }
+    } catch (error) {
+        console.error("Error retrieving user:", error);
+        res.status(500).send("Error retrieving user");
+    }
+});
 
-export default router
+export default router;
