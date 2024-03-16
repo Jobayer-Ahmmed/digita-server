@@ -2,10 +2,12 @@ import { Schema, model } from "mongoose";
 
 
 const EnrollSchema = new Schema({
-    name: "String",
-    email:"String",
-    course_name: "String",
-    course_fee: "String"
+    name: {type:"String"},
+    email:{type:"String"},
+    course_name: {type:"String"},
+    course_fee: {type:"String"},
+    ref_id: {type:"String"}
+
 })
 
 const EnrollCollection = model("EnrollCollection", EnrollSchema)

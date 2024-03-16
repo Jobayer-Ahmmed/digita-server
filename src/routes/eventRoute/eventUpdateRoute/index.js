@@ -2,7 +2,7 @@ import expres, { query } from "express"
 import EventCollection from "../../../models/Event.js"
 
 var router = expres.Router()
-router.put("/event/:id", async(req, res)=>{
+router.put("/admin/dashboard/event/:id", async(req, res)=>{
     const getId = req.params.id
     const data = req.body
     const query = {_id:getId}

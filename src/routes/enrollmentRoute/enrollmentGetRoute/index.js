@@ -1,11 +1,10 @@
 import express from "express"
-import EventCollection from "../../../models/Event.js"
-
+import EnrollCollection from "../../../models/Enrollment.js"
 
 const router = express.Router()
 
-router.get("/admin/dashboard/event", async(req, res)=>{
-    const result = await EventCollection.find()
+router.get("/course/enrollment", async(req, res)=>{
+    const result = await EnrollCollection.find()
     res.send(result)
 })
 
