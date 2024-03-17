@@ -1,11 +1,21 @@
-import express from "express"
-import EnrollCollection from "../../../models/Enrollment.js"
+import express from "express";
+import EnrollCollection from "../../../models/Enrollment.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/course/enrollment", async(req, res)=>{
-    const result = await EnrollCollection.find()
-    res.send(result)
-})
+router.get("/admin/dashboard/enrollment", async (req, res) => {
+    try {
+        const page = parseInt(req.query.page) -1
+        const size = parseInt(req.query.size)
 
-export default router
+        const cursor =await EnrollCollection.find().skip(page*size).limit(size)
+
+            res.send(cursor)
+
+    } catch (err) {
+        console.log("Error in enrollmentGetRoute:", err);
+        res.status(500).send("Error in enrollmentGetRoute: " + err); // Concatenate error message
+    }
+});
+
+export default router;

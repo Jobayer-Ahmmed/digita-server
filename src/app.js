@@ -14,6 +14,7 @@ import enrollmentPost from "./routes/enrollmentRoute/enrollmentPostRoute/index.j
 import enrollmentGetByEmail from "./routes/enrollmentRoute/enrollmentGetByEmail/index.js"
 import enrollmentGetByRef from "./routes/enrollmentRoute/enrollmentGetByRef/index.js"
 import enrollmentGet from "./routes/enrollmentRoute/enrollmentGetRoute/index.js"
+import enrollmentCountGetRoute from "./routes/enrollmentRoute/enrollmentCountGetRoute/index.js"
 import userPost from "./routes/userRoute/userPostRoute/index.js"
 import userGet from "./routes/userRoute/userGetRouteByRef/index.js"
 import userGetByEmail from "./routes/userRoute/userGetRouteByEmail/index.js"
@@ -41,6 +42,7 @@ app.use(userGet)
 app.use(userGetByEmail)
 app.use(eventRegistrationPost)
 app.use(eventRegistrationGetByEmail)
+app.use(enrollmentCountGetRoute)
 
 app.get("/health", (req, res)=>{
     res.send("Digita server is running")
