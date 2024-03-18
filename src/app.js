@@ -11,9 +11,10 @@ import eventUpdate from "./routes/eventRoute/eventUpdateRoute/index.js"
 import eventDelete from "./routes/eventRoute/eventDeleteRoute/index.js"
 import eventGetById from "./routes/eventRoute/eventGetRouteById/index.js"
 import enrollmentPost from "./routes/enrollmentRoute/enrollmentPostRoute/index.js"
+import enrollmentGet from "./routes/enrollmentRoute/enrollmentGetRoute/index.js"
 import enrollmentGetByEmail from "./routes/enrollmentRoute/enrollmentGetByEmail/index.js"
 import enrollmentGetByRef from "./routes/enrollmentRoute/enrollmentGetByRef/index.js"
-import enrollmentGet from "./routes/enrollmentRoute/enrollmentGetRoute/index.js"
+import enrollmentGetForPagination from "./routes/enrollmentRoute/enrollmentGetRouteForPagination/index.js"
 import enrollmentCountGetRoute from "./routes/enrollmentRoute/enrollmentCountGetRoute/index.js"
 import userPost from "./routes/userRoute/userPostRoute/index.js"
 import userGet from "./routes/userRoute/userGetRoute/index.js"
@@ -26,6 +27,7 @@ import eventRegistrationGet from "./routes/eventRegsitration/eventRegistrationGe
 import enrollmentTodayGet from "./routes/enrollmentRoute/enrollmentGetRouteWithTime/enrollmentTodayGetRoute/index.js"
 import enrollmentWeekGet from "./routes/enrollmentRoute/enrollmentGetRouteWithTime/enrollmentWeekGetRoute/index.js"
 import enrollmentMonthGet from "./routes/enrollmentRoute/enrollmentGetRouteWithTime/enrollmentMonthGetRoute/index.js"
+import enrollmentYearGet from "./routes/enrollmentRoute/enrollmentGetRouteWithTime/enrollmentYearGetRoute/index.js"
 
 
 const app =express()
@@ -43,6 +45,7 @@ app.use(courseGetById)
 app.use(eventGetById)
 app.use(enrollmentPost)
 app.use(enrollmentGet)
+app.use(enrollmentGetForPagination)
 app.use(enrollmentGetByEmail)
 app.use(enrollmentGetByRef)
 app.use(enrollmentCountGetRoute)
@@ -57,6 +60,7 @@ app.use(eventRegistrationCountGet)
 app.use(enrollmentTodayGet)
 app.use(enrollmentWeekGet)
 app.use(enrollmentMonthGet)
+app.use(enrollmentYearGet)
 
 app.get("/health", (req, res)=>{
     res.send("Digita server is running")
