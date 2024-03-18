@@ -8,9 +8,8 @@ router.get("/admin/dashboard/enrollment", async (req, res) => {
         const page = parseInt(req.query.page) -1
         const size = parseInt(req.query.size)
 
-        const cursor =await EnrollCollection.find().skip(page*size).limit(size)
-
-            res.send(cursor)
+        const result =await EnrollCollection.find().skip(page*size).limit(size)
+        res.send(result)
 
     } catch (err) {
         console.log("Error in enrollmentGetRoute:", err);

@@ -20,6 +20,8 @@ import userGet from "./routes/userRoute/userGetRouteByRef/index.js"
 import userGetByEmail from "./routes/userRoute/userGetRouteByEmail/index.js"
 import eventRegistrationPost from "./routes/eventRegsitration/eventRegsitrationPostRoute/index.js"
 import eventRegistrationGetByEmail from "./routes/eventRegsitration/eventRegistraionGetRouteByEmail/index.js"
+import eventRegistrationCountGet from "./routes/eventRegsitration/eventRegistrationCountGetRoute/index.js"
+import eventRegistrationGet from "./routes/eventRegsitration/eventRegistrationGetRoute/index.js"
 const app =express()
 
 applyMiddleWare(app)
@@ -37,12 +39,14 @@ app.use(enrollmentPost)
 app.use(enrollmentGet)
 app.use(enrollmentGetByEmail)
 app.use(enrollmentGetByRef)
+app.use(enrollmentCountGetRoute)
 app.use(userPost)
 app.use(userGet)
 app.use(userGetByEmail)
 app.use(eventRegistrationPost)
 app.use(eventRegistrationGetByEmail)
-app.use(enrollmentCountGetRoute)
+app.use(eventRegistrationGet)
+app.use(eventRegistrationCountGet)
 
 app.get("/health", (req, res)=>{
     res.send("Digita server is running")
