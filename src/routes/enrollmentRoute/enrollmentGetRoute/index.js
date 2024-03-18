@@ -13,7 +13,7 @@ router.get("/admin/dashboard/enrollment", async (req, res) => {
 
     } catch (err) {
         console.log("Error in enrollmentGetRoute:", err);
-        res.status(500).send("Error in enrollmentGetRoute: " + err); // Concatenate error message
+        res.status(500).send("Error in enrollmentGetRoute: " + err); 
     }
 });
 

@@ -6,7 +6,8 @@ const EnrollSchema = new Schema({
     email:{type:"String"},
     course_name: {type:"String"},
     course_fee: {type:"String"},
-    ref_id: {type:"String"}
+    ref_id: {type:"String"},
+    createdAt: { type: Date, default: Date.now }
 
 })
 
