@@ -25,6 +25,7 @@ import eventRegistrationCountGet from "./routes/eventRegsitration/eventRegistrat
 import eventRegistrationGet from "./routes/eventRegsitration/eventRegistrationGetRoute/index.js"
 import enrollmentTodayGet from "./routes/enrollmentRoute/enrollmentGetRouteWithTime/enrollmentTodayGetRoute/index.js"
 import enrollmentWeekGet from "./routes/enrollmentRoute/enrollmentGetRouteWithTime/enrollmentWeekGetRoute/index.js"
+import enrollmentMonthGet from "./routes/enrollmentRoute/enrollmentGetRouteWithTime/enrollmentMonthGetRoute/index.js"
 
 
 const app =express()
@@ -55,6 +56,7 @@ app.use(eventRegistrationGet)
 app.use(eventRegistrationCountGet)
 app.use(enrollmentTodayGet)
 app.use(enrollmentWeekGet)
+app.use(enrollmentMonthGet)
 
 app.get("/health", (req, res)=>{
     res.send("Digita server is running")
