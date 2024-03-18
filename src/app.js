@@ -16,7 +16,8 @@ import enrollmentGetByRef from "./routes/enrollmentRoute/enrollmentGetByRef/inde
 import enrollmentGet from "./routes/enrollmentRoute/enrollmentGetRoute/index.js"
 import enrollmentCountGetRoute from "./routes/enrollmentRoute/enrollmentCountGetRoute/index.js"
 import userPost from "./routes/userRoute/userPostRoute/index.js"
-import userGet from "./routes/userRoute/userGetRouteByRef/index.js"
+import userGet from "./routes/userRoute/userGetRoute/index.js"
+import userGetByRef from "./routes/userRoute/userGetRouteByRef/index.js"
 import userGetByEmail from "./routes/userRoute/userGetRouteByEmail/index.js"
 import eventRegistrationPost from "./routes/eventRegsitration/eventRegsitrationPostRoute/index.js"
 import eventRegistrationGetByEmail from "./routes/eventRegsitration/eventRegistraionGetRouteByEmail/index.js"
@@ -42,6 +43,7 @@ app.use(enrollmentGetByRef)
 app.use(enrollmentCountGetRoute)
 app.use(userPost)
 app.use(userGet)
+app.use(userGetByRef)
 app.use(userGetByEmail)
 app.use(eventRegistrationPost)
 app.use(eventRegistrationGetByEmail)
